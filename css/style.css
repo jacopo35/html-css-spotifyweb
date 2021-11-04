@@ -298,9 +298,6 @@ main .col-right .right-container {
     padding-right: 1em;
 }
 
-.col-right .right-container .album-container .album:last-child {
-}
-
 .col-right .right-container .cover {
     position: relative;
 }
