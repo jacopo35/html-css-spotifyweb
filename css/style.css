@@ -124,6 +124,7 @@ main .col-left .footer-col-left .install-app {
     align-items: center;
 }
 
+
 main .col-left .footer-col-left .install-app {
     padding-bottom: 0.5em;
     border-bottom: 1px solid var(--grey-text);
@@ -154,6 +155,11 @@ main .col-right {
 
 main .col-right .right-container {
     margin-top: 70px;
+}
+
+footer {
+    height: 70px;
+    background-color: var(--footer-background);
 }
 
 :root {
