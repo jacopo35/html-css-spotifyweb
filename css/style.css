@@ -5,6 +5,7 @@
 }
 
 :root {
+    
     --black: #000000;
     --white: #ffffff;
     --main-background: #141922;
@@ -14,7 +15,7 @@
     --green: #ADFC30;
     --footer-bar: #5A5A5A;
     --footer-done-bar: #B0B0B0;
-    --left-col-width-md: 200px;
+    --left-col-width-md: 230px;
     --left-col-width-xs: 50px;
     --footer-height: 70px;
     --upgrade-height: 70px;
@@ -45,8 +46,12 @@ ul {
 }
 
 span {
-    font-size: 0.7em;
+    font-size: 0.9em;
     color: var(--grey-text);
+}
+
+.col-left span {
+    font-weight: 500;
 }
 
 body .container {
@@ -86,6 +91,7 @@ main a:hover span {
     color: var(--white);
 }
 
+/* Main */
 main {
     height: calc(100% - var(--footer-height));
     background-color: var(--main-background);
@@ -108,7 +114,7 @@ main .col-right {
     width: calc(100% - var(--left-col-width-md));
     position: relative;
     color: var(--white);
-    overflow: scroll;
+    overflow: auto;
 }
 
 main .col-left .spotify-logo img {
@@ -140,7 +146,6 @@ main .col-left .left-navbar li.bordered svg {
 
 main h3 {
     color: var(--white);
-    font-size: 0.8em;
 }
 
 main .col-left .playlist h3 {
@@ -152,8 +157,7 @@ main .col-left .playlist {
 }
 
 main .col-left .playlist .create-playlist {
-    font-size: 0.8em;
-    margin: 0.5em 0;
+    margin: 0.8em 0;
 }
 
 main .col-left .playlist .plus-container {
@@ -172,7 +176,7 @@ main .col-left .playlist .plus-container i {
 
 main .col-left .playlist .name-playlist {
     height: var(--name-playlist-height);
-    overflow: scroll;
+    overflow: auto;
 }
 
 main .col-left .playlist .name-playlist li>a {
@@ -220,12 +224,12 @@ main .col-left .footer-col-left .install-app span {
     font-size: 0.7em;
 }
 
-
 main .col-right .right-container {
     margin: 90px 20px 20px 20px;
 }
 
 .col-right .upgrade {
+    z-index: 9999;
     top: 0;
     right: 0;
     height: var(--upgrade-height);
@@ -235,7 +239,7 @@ main .col-right .right-container {
 }
 
 .col-right .upgrade button {
-    margin: 1.5em 3em;
+    margin: 1em 3em;
     border-radius: 20px;
     padding: 0 3em;
     text-transform: uppercase;
@@ -243,7 +247,6 @@ main .col-right .right-container {
     color: var(--white);
     border: 1px solid var(--white);
     cursor: pointer;
-    font-size: 0.7em;
 }
 
 .col-right .upgrade button:hover {
@@ -259,6 +262,8 @@ main .col-right .right-container {
     display: inline-block;
     text-transform: uppercase;
     margin: 0 1em;
+    padding-bottom: 1em;
+    font-weight: 500;
 }
 
 .col-right .right-container .navbar-ul .flex {
@@ -273,9 +278,12 @@ main .col-right .right-container {
     margin: 0.3em 0;
 }
 
-/* Sezioni */
 .col-right .right-container .section {
     padding: 2em 0;
+}
+
+.col-right .right-container .section h3 {
+    font-size: 0.8em;
 }
 
 .col-right .right-container .section-title {
@@ -288,8 +296,8 @@ main .col-right .right-container {
 
 .col-right .right-container .album-container .album {
     text-align: center;
-    min-width: 145px;
-    max-width: 200px;
+    min-width: 140px;
+    max-width: 250px;
     padding-right: 1em;
 }
 
@@ -334,6 +342,10 @@ main .col-right .right-container {
 .col-right .right-container .created-for-you .album-container,
 .col-right .right-container .most-popular .album-container {
     width: calc((100% / 3) - 1em);
+}
+
+.col-right .right-container .most-popular .album {
+    width: 50%;
 }
 
 .col-right .right-container .most-popular .cover img {
@@ -413,17 +425,17 @@ footer .footer-col-left .song-title {
 }
 
 footer .footer-col-left a {
-    line-height: 0.7em;
+    line-height: 0.8em;
 }
 
 footer .footer-col-left span.author {
     color: var(--white);
-    font-size: 0.7em;
+    font-size: 0.8em;
     font-weight: bold;
 }
 
 footer .footer-col-left span.song-name {
-    font-size: 0.6em;
+    font-size: 0.7em;
 }
 
 footer .footer-col-left span.song-name:hover {
@@ -447,6 +459,10 @@ footer .footer-col-center .progress-bar {
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+
+footer .footer-col-center span {
+    font-size: 0.7em;
 }
 
 footer .footer-col-center .media-player {
@@ -530,7 +546,45 @@ footer .footer-col-right .volume-bar:hover .progress-dot {
     display: inline-block;
 }
 
-/* Media query */
+/* Media query md */
+@media screen and (max-width: 1100px) {
+    .col-right .right-container .recently-played .album-container {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .col-right .right-container .album-container .album {
+        text-align: center;
+        min-width: 100px;
+        max-width: 250px;
+        padding-right: 1em;
+    }
+
+    .col-right .right-container .recently-played .album-container .album {
+        width: calc(100% / 4);
+        margin-bottom: 1em;
+    }
+    .col-right .right-container .created-for-you .album-container,
+    .col-right .right-container .most-popular .album-container {
+        width: calc(100% / 2);
+    }
+}
+
+/* Media query s */
+@media screen and (max-width: 700px) {
+    .col-right .right-container .recently-played .album-container .album {
+        width: calc(100% / 2);
+        margin-bottom: 1em;
+    }
+
+    .col-right .right-container .created-for-you .album-container,
+    .col-right .right-container .most-popular .album-container {
+        width: 100%;
+    }
+    
+}
+
+/* Media query xs */
 @media screen and (max-width: 600px) {
     main .col-left {
         width: var(--left-col-width-xs);
